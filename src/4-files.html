@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Files</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/simplelightbox/dist/simple-lightbox.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <a class="back-link" href="./index.html">Go back</a>
+        <h1 class="main-title">Files</h1>
+      </div>
+      <h1>Пошук та завантаження файлів</h1>
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Введіть назву файлу..."
+        onkeyup="searchFiles()"
+      />
+
+      <ul>
+        <li><a href="./files/1.txt" download>1.txt</a></li>
+        <li><a href="files/2.txt" download>2.txt</a></li>
+      </ul>
+
+      <ul id="file-list">
+        <!-- <li><a href="files/price-list.pdf" download>Прайс-лист</a></li> -->
+        <!-- <li><a href="files/instruction.pdf" download>Інструкція</a></li> -->
+        <!-- <li><a href="files/catalog.xlsx" download>Каталог</a></li> -->
+        <li>
+          <a href="files/user-guide.docx" download>Керівництво користувача</a>
+        </li>
+      </ul>
+    </main>
+
+    <!-- <script src="./js/3-media.js"></script> -->
+    <!-- fix for githab search -->
+    <script src="./js/4-files.js"></script>
+    <!-- <script src="script.js?v=1"></script> -->
+  </body>
+</html>
