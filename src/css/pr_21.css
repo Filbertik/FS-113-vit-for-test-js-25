@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.content {
+  position: relative;
+  /* Додаємо фонове зображення */
+  background-image: url('../img/covers/elements_vectors_.png');
+
+  background-repeat: no-repeat; /* Не повторюємо фон */
+}
+
+.marquee {
+  position: absolute;
+  right: -900px;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 66px; /* Збільшена відстань між рядами */
+}
+
+.marquee__inner {
+  /* height: 10vh; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  transform: rotate(16deg);
+  flex-wrap: nowrap; /* Щоб зображення не переносились */
+  white-space: nowrap; /* Забезпечуємо, що зображення не переноситься */
+}
+
+/* ߔ٠Стилі для зображень */
+.marquee__line {
+  flex-shrink: 0;
+  margin-right: 10px;
+  object-fit: cover;
+  animation-name: marqueeLine;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ߔ٠Розміри зображень */
+@media (min-width: 769px) {
+  /* Планшет і десктоп */
+  .marquee__line {
+    width: 544px;
+    height: 314px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Мобільний */
+  .marquee__line {
+    width: 282px;
+    height: 162px;
+  }
+}
+
+/* ߔ٠Ключові кадри для анімації */
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(-180%);
+  }
+}
+
+/* ߔ٠Секція Covers */
+.covers {
+  /* height: 10vh; */
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
