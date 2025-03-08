@@ -37,6 +37,15 @@ body {
   gap: 66px; /* Збільшена відстань між рядами */
 }
 
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center; /* Вирівнювання по вертикалі */
+  justify-content: flex-start; /* Вирівнювання по горизонталі */
+}
+
 .marquee__inner {
   /* height: 10vh; */
   display: flex;
@@ -57,22 +66,47 @@ body {
   animation-iteration-count: infinite;
 }
 
-/* ߔ٠Розміри зображень */
-@media (min-width: 769px) {
-  /* Планшет і десктоп */
+/* Загальні стилі для зображень у маркіровці */
+.marquee__line {
+  width: 544px; /* Розмір за замовчуванням (для десктопу) */
+  height: 314px;
+  object-fit: cover; /* Щоб зображення коректно масштабувалося без спотворень */
+  margin-right: 20px; /* Відстань між зображеннями */
+}
+
+/* Для планшетів (вьюпорт шириною до 768px) */
+@media (max-width: 768px) {
   .marquee__line {
-    width: 544px;
-    height: 314px;
+    width: 544px; /* Так само, як для десктопу */
+    height: 314px; /* Зберігаємо висоту */
   }
 }
 
-@media (max-width: 768px) {
-  /* Мобільний */
+/* Для мобільних пристроїв (вьюпорт шириною до 375px) */
+@media (max-width: 375px) {
   .marquee__line {
-    width: 282px;
-    height: 162px;
+    width: 282px; /* Зменшуємо ширину */
+    height: 162px; /* Зменшуємо висоту */
+    margin-right: 10px; /* Зменшуємо відстань між зображеннями */
   }
 }
+
+/* ߔ٠Розміри зображень */
+/* @media (min-width: 769px) { */
+/* Планшет і десктоп */
+/* .marquee__line { */
+/* width: 544px; */
+/* height: 314px; */
+/* } */
+/* } */
+
+/* @media (max-width: 768px) { */
+/* Мобільний */
+/* .marquee__line { */
+/* width: 282px; */
+/* height: 162px; */
+/* } */
+/* } */
 
 /* ߔ٠Ключові кадри для анімації */
 @keyframes marqueeLine {
@@ -99,7 +133,7 @@ body {
   z-index: 1; /* Потрібно, щоб фон був під анімацією */
   background: url('../img/covers/elements_vectors_.png') no-repeat center;
   background-size: cover;
-  height: 100vh; /* Висота блоку, можна коригувати під ваші потреби */
+  height: 150vh; /* Висота блоку, можна коригувати під ваші потреби */
 }
 
 .marquee {
@@ -123,4 +157,39 @@ body {
   white-space: nowrap;
   animation-play-state: paused;
   z-index: 3; /* Анімація поверх фонового зображення */
+}
+
+/* Загальні стилі для контейнера, який містить анімацію */
+.marquee {
+  width: 100%; /* Ширина контейнера 100% */
+  overflow: hidden; /* Щоб анімація не виходила за межі */
+  position: relative;
+}
+
+/* Висота контейнера для десктопу (1440px) */
+@media (min-width: 1440px) {
+  .marquee {
+    height: 960px; /* Встановлюємо висоту для десктопу */
+  }
+}
+
+/* Висота контейнера для планшетів (до 768px) */
+@media (max-width: 768px) {
+  .marquee {
+    height: 960px; /* Встановлюємо висоту для планшетів */
+  }
+}
+
+/* Висота контейнера для мобільних пристроїв (до 375px) */
+@media (max-width: 375px) {
+  .marquee {
+    height: 508px; /* Встановлюємо висоту для мобільних пристроїв */
+  }
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center; /* Вирівнює зображення по вертикалі */
+  justify-content: flex-start; /* Вирівнює зображення по горизонталі */
+  margin-top: -20px; /* Підняти анімацію вгору, регулюйте по потребі */
 }
