@@ -22,10 +22,9 @@ body {
 }
 .content {
   position: relative;
-  /* Додаємо фонове зображення */
-  background-image: url('../img/covers/elements_vectors_.png');
-
-  background-repeat: no-repeat; /* Не повторюємо фон */
+  z-index: 1;
+  background: url('../img/covers/elements_vectors_.png') no-repeat center;
+  background-size: cover;
 }
 
 .marquee {
@@ -93,4 +92,35 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Потрібно, щоб фон був під анімацією */
+  background: url('../img/covers/elements_vectors_.png') no-repeat center;
+  background-size: cover;
+  height: 100vh; /* Висота блоку, можна коригувати під ваші потреби */
+}
+
+.marquee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 66px; /* Відстань між зображеннями */
+  width: 100%; /* Блок на всю ширину */
+  z-index: 2; /* Анімація поверх фону */
+}
+
+.marquee__inner {
+  display: flex;
+  transform: rotate(16deg);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  animation-play-state: paused;
+  z-index: 3; /* Анімація поверх фонового зображення */
 }
