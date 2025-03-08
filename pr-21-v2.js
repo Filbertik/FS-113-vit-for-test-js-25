@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("covers"),n=document.querySelectorAll(".marquee__inner");function o(){n.forEach(e=>{e.style.animation="marqueeMove 10s linear infinite"})}function r(){n.forEach(e=>{e.style.animation="none"})}function s(e){e.forEach(i=>{i.isIntersecting?o():r()})}new IntersectionObserver(s,{root:null,threshold:.2}).observe(t)});
+//# sourceMappingURL=pr-21-v2.js.map
