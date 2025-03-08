@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       shuffledImages.forEach(img => {
         const type = getImageType();
-        const imgPath = `../img/covers/${img}${type}.jpg`;
+        const imgPath = `/img/covers/${img}${type}.jpg`;
 
         const imageElement = document.createElement('img');
         imageElement.classList.add('marquee__line');
